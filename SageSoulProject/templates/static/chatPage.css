@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.chat-container {
+    height: calc(100vh - 80px);
+    /* background-color: aquamarine; */
+    overflow-x:hidden;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    overflow:scroll;
+    align-items: center;
+}
+
+
+.center-input {
+    height: 100%;
+    width: 70vw;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.center-chat{
+    /* background-color: chartreuse; */
+    overflow:scroll;
+    position:relative;
+    width: 70vw;
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x:hidden;
+    justify-content: flex-start;
+}
+
+.question, .answer{
+    width:100%;
+    /* min-height: 100px;  INSTEAD OF HEIGHT, GIVE PADDING */
+    padding:10px;
+    
+    margin-top:20px;
+    display:flex;
+}
+/* 
+.question {
+    background-color: blueviolet;
+    
+    
+}
+
+.answer{
+    background-color: chocolate;
+} */
+
+.input-container{
+    height: 80px;
+    width: 100vw;
+    display: flex;
+    align-items: top;
+    justify-content: center;
+}
+
+
+.user-input-text,
+.user-input-button {
+    position: absolute;
+}
+
+.user-input-text {
+    width: 70vw;
+    height: 35px;
+}
+
+.user-input-button {
+    width: 50px;
+    height: 28px;
+    margin-right: 13px;
+}
+
+.logo{
+    width: 50px;
+    height: 100%;
+    /* background-color: cornflowerblue; */
+
+}
+
+.message{
+    width: calc( 100% - 50px );
+    height: 100%;
+    /* background-color: darkorange; */
+    display:flex;
+    flex-direction:column;
+}
+
+.bot-name{
+    width:100%;
+    height: 30px;
+    /* background-color: black; */
+}
+
+.message-text {
+    width:100%;
+    height: calc( 100% - 30px );
+    /* background-color: brown; */
+}
