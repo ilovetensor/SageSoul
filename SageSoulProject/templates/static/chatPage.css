@@ -10,8 +10,8 @@ body {
 
 .chat-container {
     height: calc(100vh - 80px);
-    /* background-color: aquamarine; */
     overflow-x:hidden;
+    overflow-y: scroll;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -29,19 +29,21 @@ body {
 }
 
 .center-chat{
-    /* background-color: chartreuse; */
-    overflow:scroll;
     position:relative;
+    overflow-y: scroll;
     width: 70vw;
     height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow-x:hidden;
-    justify-content: flex-start;
 }
 
-.question, .answer{
+.center-chat::-webkit-scrollbar {
+    display: none;
+}
+
+.question-container, .answer-container{
     width:100%;
     /* min-height: 100px;  INSTEAD OF HEIGHT, GIVE PADDING */
     padding:10px;
@@ -49,16 +51,32 @@ body {
     margin-top:20px;
     display:flex;
 }
-/* 
-.question {
-    background-color: blueviolet;
-    
+
+.question-container {
+    justify-content: flex-start;
+}
+
+.question, .answer {
+    height:100%;
+    display: flex;
+    flex-direction: row;
+    padding-left:10px;
+    padding-right:10px;
+    color:black;
     
 }
 
 .answer{
-    background-color: chocolate;
-} */
+    background-color: lightblue
+}
+
+.question{
+    background-color: lightpink;
+}
+.answer-container{
+    justify-content: flex-end;
+}
+
 
 .input-container{
     height: 80px;
@@ -88,26 +106,30 @@ body {
 .logo{
     width: 50px;
     height: 100%;
-    /* background-color: cornflowerblue; */
-
 }
 
 .message{
     width: calc( 100% - 50px );
+    height: 100%;    
+}
+
+.message-ans {
+    padding-left:10px;
+    padding-right:10px;
     height: 100%;
-    /* background-color: darkorange; */
     display:flex;
     flex-direction:column;
+    align-items: flex-end;
 }
 
 .bot-name{
-    width:100%;
+    width:fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
     height: 30px;
-    /* background-color: black; */
 }
 
 .message-text {
     width:100%;
     height: calc( 100% - 30px );
-    /* background-color: brown; */
 }

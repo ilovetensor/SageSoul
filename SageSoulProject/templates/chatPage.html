@@ -6,80 +6,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'chatPage.css' %}">
+    <script src="{% static 'chatPage.js' %}"></script>
     <title>ChatPage</title>
 </head>
 
 <body>
     <div class="chat-container">
-        <div class="center-chat">
-            <!-- They will be dynamically generated.
-            Given here just for visualization purpose -->
-            <div class="question">
-                <div class="logo">Logo</div>
-                <div class="message">
-                    <div class="bot-name">GPT</div>
-                    <div class="message-text">Hi, how may I help you?<br> And also what's your name</div>
-                </div>
-            </div>
-            <div class="answer">
-                <div class="logo">User</div>
-                <div class="message">
-                    <div class="bot-name">User</div>
-                    <div class="message-text">I would like to have a glass of water, please.</div>
-                </div>
-            </div>
-            <div class="question">
-                <div class="logo">Logo</div>
-                <div class="message">
-                    <div class="bot-name">GPT</div>
-                    <div class="message-text">Hi, how may I help you?<br> And also what's your name</div>
-                </div>
-            </div>
-            <div class="answer">
-                <div class="logo">User</div>
-                <div class="message">
-                    <div class="bot-name">User</div>
-                    <div class="message-text">I would like to have a glass of water, please.</div>
-                </div>
-            </div>
-            <div class="question">
-                <div class="logo">Logo</div>
-                <div class="message">
-                    <div class="bot-name">GPT</div>
-                    <div class="message-text">Hi, how may I help you?<br> And also what's your name</div>
-                </div>
-            </div>
-            <div class="answer">
-                <div class="logo">User</div>
-                <div class="message">
-                    <div class="bot-name">User</div>
-                    <div class="message-text">I would like to have a glass of water, please.</div>
-                </div>
-            </div>
-            <div class="question">
-                <div class="logo">Logo</div>
-                <div class="message">
-                    <div class="bot-name">GPT</div>
-                    <div class="message-text">Hi, how may I help you?<br> And also what's your name</div>
-                </div>
-            </div>
-            <div class="answer">
-                <div class="logo">User</div>
-                <div class="message">
-                    <div class="bot-name">User</div>
-                    <div class="message-text">I would like to have a glass of water, please.</div>
-                </div>
-            </div>
-        </div>
-        
+        <div class="center-chat"><!--HTML will generate dynamically here-->
+        </div>    
     </div>
     <div class="input-container">
         <div class="center-input">
             <input type="text" class="user-input-text">
-            <input type="submit" class="user-input-button" value="Send">
+            <input type="submit" class="user-input-button" value="Send" onclick="SubmitFunction()">
         </div>
-
     </div>
 </body>
-
 </html>
