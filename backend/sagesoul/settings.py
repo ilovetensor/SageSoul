@@ -63,10 +63,27 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost:5173',
-    'http://localhost:8000'
-)
+# # origins (domains) that are permitted to make cross-origin request
+# CORS_ORIGIN_WHITELIST = (
+#     'http://localhost:5173',
+#     'http://localhost:8000'
+# )
+
+# ALLOWED_HOSTS = ['127.0.0.1']
+# # CORS_ORIGIN_ALLOW_ALL = True
+
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:5173",  # Example: React development server
+
+# ]
+
+ALLOWED_HOSTS = ['127.0.0.1']
+# CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",  # Example: React development server
+
+]
 
 ROOT_URLCONF = 'sagesoul.urls'
 
