@@ -10,7 +10,6 @@ from .views import RegistrationView
 
 urlpatterns = [
     path('token/register/', RegistrationView.as_view()),
-    # path('token/logout/', LogoutView.as_view()),
     path('token/logout/', TokenBlacklistView.as_view(), name='token_blacklist'),
     path('token/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),

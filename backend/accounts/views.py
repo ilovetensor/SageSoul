@@ -17,9 +17,12 @@ class RegistrationView(APIView):
         # Check if the user already exists
         if User.objects.filter(username=username).exists():
             return Response({"error": "Username is already taken."}, status=status.HTTP_400_BAD_REQUEST)
+        if User.objects.filter(email = email):
+            return Response({"error": "The email address is already registered"}, status=status.HTTP_400_BAD_REQUEST)
 
         # Create the user
         user = User.objects.create_user(username=username,email=email, password=password)
+
 
         # Generate tokens for the newly registered user
         refresh = RefreshToken.for_user(user)

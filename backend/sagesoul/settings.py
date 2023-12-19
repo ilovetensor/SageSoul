@@ -45,21 +45,10 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'rest_framework',
     'rest_framework_simplejwt.token_blacklist',
-    # 'allauth',
-    # 'allauth.account',
-    # 'allauth.socialaccount',
-    # 'rest_auth',
-    # 'rest_auth.registration',
-    'corsheaders'
+    'corsheaders',
+    'drf_api_logger',
 ]
 
-# AUTHENTICATION_BACKENDS = [
-#     # Needed to login by username in Django admin, regardless of `allauth`
-#     'django.contrib.auth.backends.ModelBackend',
-
-#     # `allauth` specific authentication methods, such as login by email
-#     'allauth.account.auth_backends.AuthenticationBackend',
-# ]
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
@@ -78,23 +67,11 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    # "allauth.account.middleware.AccountMiddleware",
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'drf_api_logger.middleware.api_logger_middleware.APILoggerMiddleware'
 ]
 
-# # origins (domains) that are permitted to make cross-origin request
-# CORS_ORIGIN_WHITELIST = (
-#     'http://localhost:5173',
-#     'http://localhost:8000'
-# )
-
-# ALLOWED_HOSTS = ['127.0.0.1']
-# # CORS_ORIGIN_ALLOW_ALL = True
-
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:5173",  # Example: React development server
-
-# ]
+DRF_API_LOGGER_DATABASE = True 
 
 ALLOWED_HOSTS = ['127.0.0.1']
 # CORS_ORIGIN_ALLOW_ALL = True
