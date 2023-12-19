@@ -12,7 +12,7 @@ class RegistrationView(APIView):
         email = request.data.get('email')
 
         if password1 != password2:
-            return Response({"error":"Both passwords dko not match."}, status = status.HTTP_400_BAD_REQUEST)
+            return Response({"error":"Both passwords do not match."}, status = status.HTTP_400_BAD_REQUEST)
 
         if not username or not password1:
             return Response({"error": "Username and password are required."}, status=status.HTTP_400_BAD_REQUEST)
