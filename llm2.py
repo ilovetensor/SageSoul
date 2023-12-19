@@ -1,5 +1,6 @@
 
 def get_formulation_details(user_symptoms):
+    import requests
     import pandas as pd
     import numpy as np
 
@@ -155,16 +156,20 @@ def get_formulation_details(user_symptoms):
         # Iterate through the filtered DataFrame and print each row separately
         diction = {}
         i=0
-        for index, row in filtered_df.iterrows():
-            key_name = user_symptoms_corrected[i]
-            diction[key_name] = {'Name of Medicine':row['Name of Medicine'],
-                                 "Vata":row['Vata'],
-                                 "formulation": row['formulation']}
-            i+=1
-        print(diction)
+        try:
+            for index, row in filtered_df.iterrows():
+                key_name = user_symptoms_corrected[i]
+                diction[key_name] = {'Name of Medicine':row['Name of Medicine'],
+                                    "Vata":row['Vata'],
+                                    "formulation": row['formulation']}
+                i+=1
+            print(diction)
+        except Exception as e:
+            httpRes = requests.Response()
+            httpRes.status_code
 
             
 
 
-get_formulation_details(user_symptoms=['vatavikara','arha'])
+get_formulation_details(user_symptoms=['sdgzdsgsadfsaf','arha'])
 
