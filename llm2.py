@@ -97,14 +97,17 @@ def get_formulation_details(user_symptoms):
     # # input_symptoms = user_input.split()
 
     # # user_symptoms => ['jara', 'agnimandya']
-    user_symptoms = correct_symptoms(user_symptoms)
-
+    user_symptoms_corrected = correct_symptoms(user_symptoms)
+    for i in range(0,len(user_symptoms_corrected)):
+        if user_symptoms_corrected[i]!=user_symptoms[i]:
+            print(f"Did you mean: {user_symptoms_corrected[i].title()}?")
     
-    # ##print(f"Did you mean: {', '.join(user_symptoms)}")
+    
+    
 
-    symptoms_lst_desc(user_symptoms)
+    symptoms_lst_desc(user_symptoms_corrected)
     # [java arsha] => jara arsha
-    user_symptoms_str = " ".join(user_symptoms)  # Convert user symptoms to a single string
+    user_symptoms_str = " ".join(user_symptoms_corrected)  # Convert user symptoms to a single string
     # print(user_symptoms_str)
     # Create a DataFrame
     df = pd.DataFrame(data)
@@ -153,7 +156,7 @@ def get_formulation_details(user_symptoms):
         diction = {}
         i=0
         for index, row in filtered_df.iterrows():
-            key_name = user_symptoms[i]
+            key_name = user_symptoms_corrected[i]
             diction[key_name] = {'Name of Medicine':row['Name of Medicine'],
                                  "Vata":row['Vata'],
                                  "formulation": row['formulation']}
@@ -163,5 +166,5 @@ def get_formulation_details(user_symptoms):
             
 
 
-get_formulation_details(user_symptoms=['java', 'arsha'])
+get_formulation_details(user_symptoms=['vatavikara','arha'])
 
