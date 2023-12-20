@@ -11,8 +11,11 @@ class DataModel(models.Model):
     Preferred_use = models.CharField(max_length = 10, blank=True)
     Class = models.CharField(max_length=1)
 
-class BookModel(models.Model):
-    Book_name = models.CharField(max_length=60)
-    Book_content = models.TextField()
 
-    
+
+class Books(models.Model):
+    index = models.IntegerField()
+    name = models.CharField(max_length=60)
+    content = models.TextField()
+
+
