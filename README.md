@@ -20,11 +20,16 @@ To tackle this challenge, SageSoul adopts two distinct approaches, each addressi
 
 ### 1. Similarity Search 🔎
 
+![Similarity Search](https://github.com/ilovetensor/SageSoul/blob/main/Screenshot%20from%202024-02-22%2018-33-18.png)
+It can be seen from the image, on applying the query **"How to treat Worms ?"**, it gives the most similar paragraph **directly from the book!** which is the clear description of how to handle this problem. And so the answer is trust-worthy and from a cited source. 
+
 - This approach utilizes the **Facebook AI Similarity Search** tool.
 - Texts are extracted from books and segmented into paragraphs.
 - These paragraphs are then converted into vectors.
 - When a user submits a query, it is transformed into a vector.
 - The system matches the query vector with the nearest vector in the paragraph space, presenting the top 5 results directly from the book.
+
+  
 
 ### 2. ML Model 🪷
 
